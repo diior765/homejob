@@ -10,7 +10,7 @@ INSERT INTO employees (id, name, salary) VALUES
 (3, 'Charlie', 50000);
 
 select *from employees
-where salary = ( select min(salary) from employees)
+where salary in ( select min(salary) from employees)
 
 
 CREATE TABLE products (
