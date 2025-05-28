@@ -50,10 +50,8 @@ INSERT INTO employees1 (id, name, department_id) VALUES
 (2, 'Eve', 2),
 (3, 'Frank', 1);
 
-select e.*
-from employees1 as e
-join departments as d on e.department_id = d.id
-where d.department_name = 'Sales';
+select id,name,(select department_name from departments where departments.id=employees1.department_id) as job from employees1
+where department_id=1
 
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
